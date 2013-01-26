@@ -2,7 +2,7 @@
 set -e
 
 if [[ "$ICECAVE_PUBLISH_COVERAGE" == "true" ]]; then
-    REPO="$(pwd | sed s,^${HOME}/builds/,,g)"
+    REPO="$(pwd | sed s,^${HOME}/build/,,g)"
     PHP_VERSION="$(php -r 'echo phpversion();')"
 
     set +e
