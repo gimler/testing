@@ -6,11 +6,11 @@ function executeCommand($message, $command)
 {
     $exitCode = null;
     $output = array();
-    
+
     echo $message . ' ...';
     exec($command, $output, $exitCode);
     $output = implode(PHP_EOL, $output);
-    
+
     if ($exitCode === 0) {
         echo ' Done.' . PHP_EOL;
         return $output;
