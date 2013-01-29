@@ -2,6 +2,12 @@
 set -e
 
 if [[ "$ICECAVE_PUBLISH_COVERAGE" == "true" ]]; then
+
+    if [[ "$TRAVIS_BRANCH" != "master" ]]; then
+        echo "Skipping coverage reports for '${TRAVIS_BRANCH}' branch."
+        exit 0
+    fi
+
     REPO="$(pwd | sed s,^${HOME}/build/,,g)"
     PHP_VERSION="$(php -r 'echo phpversion();')"
 
