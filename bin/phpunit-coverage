@@ -11,6 +11,7 @@ fi
 echo "Using PHPUnit: $PHPUNIT_PATH"
 
 /usr/bin/env php \
+    --define phar.readonly=0 \
     --define memory_limit=512M \
     --define apc.enabled=1 \
     --define apc.enable_cli=1 \
