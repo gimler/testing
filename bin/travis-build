@@ -16,7 +16,7 @@ if [[ "$ICECAVE_PUBLISH_COVERAGE" == "true" ]]; then
     TEST_RESULT=$?
     set -e
 
-    ./vendor/bin/woodhouse github:publish \
+    ./vendor/bin/woodhouse publish \
         $REPO \
         test/report/coverage:coverage-report \
         --message "Publishing coverage reports from build ${TRAVIS_BUILD_NUMBER} (php ${PHP_VERSION})." \
